@@ -9,5 +9,6 @@ Free account provides 170 EURO for 30 days. You will need to upgrade after perio
     - create aks cluster - `az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys`
 - accesing cluster is done through kubectl. Installing kubectl locally can be done with `az aks install-cli`
 - get kube config by running `az aks get-credentials --resource-group myResourceGroup --name myAKSCluster`
+- in case you have multiple contexts you need switch context with `kubectl config use-context myAKSCluster`
 - check kube config is functional by running `kubectl cluster-info`
 - rest of the configs are done using kubectl

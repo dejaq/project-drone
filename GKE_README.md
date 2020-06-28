@@ -22,6 +22,7 @@ to collect all of the related resources for a single application in one place.
             - select project to use from interactive menu
             - configure a default zone (same as project)
 - get kube config by running: `gcloud container clusters get-credentials [cluster-name] --zone [cluster-zone]`.
+- in case you have multiple contexts you need switch context with `kubectl config use-context cluster-name`
 - check kube config is functional by running `kubectl cluster-info`
 - rest of the configs are done using kubectl
  
