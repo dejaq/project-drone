@@ -77,6 +77,12 @@ Apps are structured as a tree of constructs, which are composable units of abstr
  The manifest synthesized by your app is ready to be applied to any Kubernetes cluster using standard tools like kubectl apply.
 Eg.
 `$ kubectl apply -f dist/hello.k8s.yaml`
+##### Octant
+###### Installation
+- Local installation - https://github.com/vmware-tanzu/octant#installation
+###### Running
+- First check cluster access with `kubectl cluster-info`
+- Start running Octant with `octant` coommand. This should open your default browser to `127.0.0.1:7777`
 ##### TektonCD
 ###### Installation
 - Installation walkthrough - https://github.com/tektoncd/pipeline/blob/master/docs/install.md#installing-tekton-pipelines-on-kubernetes
@@ -88,4 +94,20 @@ Eg.
 as a Pod on your Kubernetes cluster with each step as its own container 
 - A **Pipeline** defines an ordered series of Tasks that you want to execute along with the corresponding inputs and outputs 
 for each Task. You can specify whether the output of one Task is used as an input for the next Task using the from property
-
+##### tcconfig
+###### Installation
+- `pip install tcconfig` will install the package
+- requirements
+     - python >=3.5
+     - `iproute2` or `iproute-tc` linux package depending on platform
+- more info: https://pypi.org/project/tcconfig/#installation-
+###### Running 
+- tcconfig should be installed on the image deployed on the pods. 
+- container needs to be started with `--cap-add NET_ADMIN`
+- available parameters:
+    - Network bandwidth rate [G/M/K bps]
+    - Network latency [microseconds/milliseconds/seconds/minutes]
+    - Packet loss rate [%]
+    - Packet corruption rate [%]
+    - Packet duplicate rate [%]
+    - Packet reordering rate [%]
